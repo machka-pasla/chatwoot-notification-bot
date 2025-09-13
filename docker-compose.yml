@@ -1,0 +1,17 @@
+services:
+  notifier:
+    image: ghcr.io/machka-pasla/chatwoot-notification-bot:latest
+    container_name: chatwoot-notification-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./locales:/app/locales
+    ports:
+      - "127.0.0.0:8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s

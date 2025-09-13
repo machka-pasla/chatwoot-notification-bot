@@ -1,0 +1,2 @@
+notifications:
+  support_new_message: "<b>Новое сообщение в технической поддержке!</b>\nПользователь {user_name} ждёт ответа от агента технической поддержки {assignee_name}\n<a href='{link}'>Перейти в диалог</a>"
